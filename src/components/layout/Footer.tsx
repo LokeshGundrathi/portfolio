@@ -7,17 +7,17 @@ export function Footer() {
 
   return (
     <footer className="border-t border-portfolio-border bg-[#0c0e14]/80">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-6xl flex-col gap-5 px-4 py-8 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
         <div>
           <p className="font-semibold text-portfolio-text">{personal.name}</p>
           <p className="mt-1 text-sm text-portfolio-muted">{personal.role}</p>
         </div>
-        <div className="flex flex-wrap items-center gap-3 text-sm">
+        <div className="flex flex-col gap-2 text-sm sm:flex-row sm:flex-wrap sm:items-center sm:gap-3">
           <a
             href={`mailto:${personal.email}`}
-            className="inline-flex items-center gap-1.5 text-portfolio-muted transition hover:text-cyan-300"
+            className="inline-flex items-center gap-1.5 break-all text-portfolio-muted transition hover:text-cyan-300"
           >
-            <Mail size={15} /> {personal.email}
+            <Mail size={15} className="shrink-0" /> {personal.email}
           </a>
           <a
             href={personal.linkedin}

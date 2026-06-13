@@ -63,10 +63,25 @@ Live site: `https://lokeshgundrathi.github.io/lokeshgundrathi/`
 
 ### Option A — GitHub Actions (recommended)
 
+**Do this first (one-time setup):**
+
+1. Open [Settings → Pages](https://github.com/LokeshGundrathi/lokeshgundrathi/settings/pages).
+2. Under **Build and deployment**, set **Source** to **GitHub Actions** (not “Deploy from a branch”).
+3. Save. If you skip this step, the workflow fails with `Failed to create deployment (status: 404)`.
+
+**Then deploy:**
+
 1. Push to `main`.
-2. In the repo go to **Settings → Pages**.
-3. Set **Source** to **GitHub Actions**.
-4. Each push to `main` builds and deploys automatically.
+2. GitHub Actions builds and publishes automatically.
+3. Re-run a failed workflow from the **Actions** tab after enabling Pages.
+
+### Troubleshooting
+
+| Error | Fix |
+|-------|-----|
+| `Failed to create deployment (status: 404)` | Enable Pages and set source to **GitHub Actions** in repo settings |
+| Site loads but no CSS/images | Confirm `base: '/lokeshgundrathi/'` is set in `vite.config.js` |
+| Workflow not running | Check the **Actions** tab is enabled for the repo |
 
 ### Option B — Manual deploy
 

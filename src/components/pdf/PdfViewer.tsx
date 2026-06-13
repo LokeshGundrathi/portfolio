@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
@@ -11,11 +11,28 @@ type PdfViewerProps = {
 };
 
 export function PdfViewer({ file, className = '' }: PdfViewerProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
   const [numPages, setNumPages] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [pageWidth, setPageWidth] = useState(320);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const updateWidth = () => {
+      const nextWidth = Math.floor(container.clientWidth - 24);
+      setPageWidth(Math.max(240, Math.min(nextWidth, 860)));
+    };
+
+    updateWidth();
+    const observer = new ResizeObserver(updateWidth);
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className={`overflow-auto bg-[#0f1117] ${className}`}>
+    <div ref={containerRef} className={`overflow-auto bg-portfolio-bg ${className}`}>
       <Document
         file={file}
         onLoadSuccess={({ numPages: pages }) => {
@@ -23,9 +40,9 @@ export function PdfViewer({ file, className = '' }: PdfViewerProps) {
           setError(null);
         }}
         onLoadError={() => setError('Unable to load the resume preview.')}
-        loading={<p className="p-6 text-sm text-[#94a3b8]">Loading resume preview...</p>}
+        loading={<p className="p-4 text-sm text-portfolio-muted sm:p-6">Loading resume preview...</p>}
         error={
-          <div className="p-6 text-[#94a3b8]">
+          <div className="p-4 text-sm text-portfolio-muted sm:p-6">
             PDF preview is not available.
             <a href={file} className="ml-1 text-cyan-300 underline" download>
               Download the resume
@@ -33,18 +50,18 @@ export function PdfViewer({ file, className = '' }: PdfViewerProps) {
             .
           </div>
         }
-        className="flex flex-col items-center gap-4 p-4"
+        className="flex flex-col items-center gap-3 p-3 sm:gap-4 sm:p-4"
       >
-        {error ? <p className="p-6 text-sm text-red-300">{error}</p> : null}
+        {error ? <p className="p-4 text-sm text-red-300 sm:p-6">{error}</p> : null}
         {numPages
           ? Array.from({ length: numPages }, (_, index) => (
               <Page
                 key={`page-${index + 1}`}
                 pageNumber={index + 1}
-                width={Math.min(860, typeof window !== 'undefined' ? window.innerWidth - 48 : 860)}
+                width={pageWidth}
                 renderTextLayer
                 renderAnnotationLayer
-                className="overflow-hidden rounded-lg border border-[#2a2d3a] shadow-lg"
+                className="max-w-full overflow-hidden rounded-lg border border-portfolio-border shadow-lg"
               />
             ))
           : null}

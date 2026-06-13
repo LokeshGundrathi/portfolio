@@ -19,9 +19,9 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-portfolio-bg font-sans text-portfolio-text">
+    <div className="min-h-screen overflow-x-hidden bg-portfolio-bg font-sans text-portfolio-text">
       <Header onNavigate={scrollToSection} />
-      <main>
+      <main className="min-w-0 overflow-x-hidden">
         <HeroSection />
         <ExperienceSection />
         <ProjectsSection />
