@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "private": true,
-  "homepage": "https://lokeshgundrathi.github.io/lokeshgundrathi",
+  "homepage": "https://lokeshgundrathi.github.io/portfolio"
   "scripts": {
     "start": "vite --host 0.0.0.0",
     "dev": "vite --host 0.0.0.0",
