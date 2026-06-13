@@ -15,12 +15,23 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 
-export const personal = {
+export type PersonalInfo = {
+  name: string;
+  role: string;
+  location: string;
+  email: string;
+  phone: string;
+  linkedin: string;
+  github: string;
+};
+
+export const personal: PersonalInfo = {
   name: 'Gundrathi Lokesh',
   role: 'Software Engineer | Java Full Stack | Distributed Systems',
   location: 'Bengaluru, India',
   email: 'lokeshgundrathi@gmail.com',
-  linkedin: 'https://linkedin.com/in/lokeshgundrathi-9bab70237',
+  phone: '+91 9347716674',
+  linkedin: 'https://www.linkedin.com/in/lokesh-gundrathi-9bab70237/',
   github: 'https://github.com/LokeshGundrathi',
 };
 
