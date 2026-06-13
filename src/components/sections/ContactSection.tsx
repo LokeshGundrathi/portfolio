@@ -1,4 +1,4 @@
-import { Mail, Sparkles } from 'lucide-react';
+import { Mail, Phone, Sparkles } from 'lucide-react';
 import { personal, sectionMeta } from '../../data/portfolio';
 import { Github, Linkedin } from '../icons/SocialIcons';
 import { Card } from '../ui/Card';
@@ -36,6 +36,12 @@ export function ContactSection() {
               className={`${actionButtonClass} bg-portfolio-accent text-portfolio-bg hover:bg-portfolio-accentHover`}
             >
               <Mail size={18} /> Email
+            </a>
+            <a
+              href={`tel:${personal.phone.replace(/\s/g, '')}`}
+              className={`${actionButtonClass} border border-portfolio-border bg-portfolio-bg text-portfolio-text hover:border-cyan-500/40 hover:text-cyan-300`}
+            >
+              <Phone size={18} /> {personal.phone}
             </a>
             <a
               href={personal.linkedin}
