@@ -1,0 +1,34 @@
+{
+  "name": "lokeshgundrathi-portfolio",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "homepage": "https://LokeshGundrathi.github.io",
+  "scripts": {
+    "start": "vite --host 0.0.0.0",
+    "dev": "vite --host 0.0.0.0",
+    "typecheck": "tsc --noEmit",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.2",
+    "framer-motion": "^12.23.12",
+    "gh-pages": "^6.3.0",
+    "lucide-react": "^1.18.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-pdf": "^10.4.1",
+    "vite": "^8.0.16"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^6.0.3"
+  }
+}
