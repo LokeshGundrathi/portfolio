@@ -55,11 +55,22 @@ npm run build
 
 ## Deploy to GitHub Pages
 
+Live site: `https://lokeshgundrathi.github.io/lokeshgundrathi/`
+
+### Option A — GitHub Actions (recommended)
+
+1. Push to `main`.
+2. In the repo go to **Settings → Pages**.
+3. Set **Source** to **GitHub Actions**.
+4. Each push to `main` builds and deploys automatically.
+
+### Option B — Manual deploy
+
 `package.json` includes:
 
 ```json
 {
-  "homepage": "https://LokeshGundrathi.github.io",
+  "homepage": "https://lokeshgundrathi.github.io/lokeshgundrathi",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -73,7 +84,9 @@ Deploy with:
 npm run deploy
 ```
 
-This publishes the `build/` output to the `gh-pages` branch.
+Then set **Settings → Pages → Source** to the `gh-pages` branch.
+
+`vite.config.js` uses `base: '/lokeshgundrathi/'` so assets load correctly on GitHub Pages.
 
 ## Recruiter UX Notes
 
