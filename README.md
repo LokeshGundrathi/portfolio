@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Gundrathi Lokesh Portfolio
+=======
+## Hi Lokesh 👋
+>>>>>>> 8775bc5afc887b30fd94e3faa7ea58690e437437
 
 Recruiter-ready single-page portfolio for Gundrathi Lokesh, built with React, TypeScript, Tailwind CSS, Framer Motion, and lucide-react.
 
