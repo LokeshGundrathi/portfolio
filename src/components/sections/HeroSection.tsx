@@ -19,13 +19,15 @@ export function HeroSection() {
       className="scroll-mt-[4.25rem] border-b border-portfolio-border/60 bg-gradient-to-b from-cyan-500/[0.06] to-transparent sm:scroll-mt-[4.75rem]"
     >
       <div className="mx-auto grid w-full min-w-0 max-w-6xl grid-cols-1 items-start gap-6 px-4 py-10 sm:gap-8 sm:px-6 sm:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:px-8 lg:py-20">
-        <Card className="order-1 min-w-0 overflow-hidden p-2 sm:p-3 lg:col-start-2 lg:row-start-1">
-          <img
-            src={assets.profileImage}
-            alt="Gundrathi Lokesh speaking at a podium"
-            className="aspect-[4/5] h-auto w-full max-h-[280px] rounded-lg object-cover object-[52%_52%] sm:max-h-[360px] lg:max-h-[460px]"
-            loading="eager"
-          />
+        <Card className="order-1 mx-auto min-w-0 overflow-hidden p-2 sm:p-3 lg:col-start-2 lg:row-start-1 lg:mx-0">
+          <div className="mx-auto aspect-square w-full max-w-[280px] overflow-hidden rounded-lg sm:max-w-[360px] lg:max-w-[420px]">
+            <img
+              src={assets.profileImage}
+              alt="Gundrathi Lokesh professional headshot"
+              className="h-full w-full origin-[50%_24%] scale-[1.38] object-cover object-[50%_24%]"
+              loading="eager"
+            />
+          </div>
         </Card>
 
         <motion.div
@@ -55,8 +57,7 @@ export function HeroSection() {
           </p>
 
           <p className="mt-3 max-w-full break-words text-sm leading-6 text-portfolio-muted sm:mt-4 sm:text-base sm:leading-7 lg:text-lg lg:leading-8">
-            I build production-grade Java platforms: Kafka pipelines, ETL workflows, multi-tenant SaaS systems, and cloud
-            automation that engineering teams can operate with confidence.
+            {personal.heroBio}
           </p>
           <div className="mt-5 flex flex-wrap gap-2 sm:mt-6">
             {primaryTech.map((item) => (

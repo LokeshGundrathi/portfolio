@@ -1,17 +1,17 @@
 import { ChevronRight, MapPin } from 'lucide-react';
-import { experienceBullets, sectionMeta } from '../../data/portfolio';
+import { experienceBullets, experienceRole, sectionMeta } from '../../data/portfolio';
 import { Card } from '../ui/Card';
 import { Section } from '../ui/Section';
 
 export function ExperienceSection() {
-  const { label, title, icon } = sectionMeta.experience;
+  const { label, title, subtitle, icon } = sectionMeta.experience;
 
   return (
     <Section
       id="experience"
       label={label}
       title={title}
-      subtitle="A recruiter should see the shape of the work immediately: throughput, services owned, cloud automation, and team leadership."
+      subtitle={subtitle}
       icon={icon}
     >
       <div className="relative border-l border-portfolio-border pl-4 sm:pl-8">
@@ -20,7 +20,7 @@ export function ExperienceSection() {
           <div className="flex flex-col justify-between gap-3 border-b border-portfolio-border pb-4 sm:gap-4 sm:pb-6 sm:flex-row sm:items-start">
             <div>
               <h2 className="text-xl font-bold text-portfolio-text sm:text-2xl">InspironLabs</h2>
-              <p className="mt-1 text-sm text-cyan-300 sm:text-base">Software Engineer - Java Full Stack</p>
+              <p className="mt-1 text-sm text-cyan-300 sm:text-base">{experienceRole}</p>
             </div>
             <div className="text-left sm:text-right">
               <p className="text-sm font-medium text-portfolio-muted sm:text-base">Oct 2024 - Present</p>

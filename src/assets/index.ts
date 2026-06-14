@@ -1,4 +1,4 @@
-import profileImage from '../resources/Profile.jpg';
+import profileImage from '../resources/Profile.png';
 import resumePdf from '../resources/Lokesh_Gundrathi_Resume.pdf';
 
 export const assets = {

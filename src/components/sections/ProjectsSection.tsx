@@ -5,15 +5,17 @@ import { Card } from '../ui/Card';
 import { Section } from '../ui/Section';
 import { TechBadge } from '../ui/TechBadge';
 
+const detailBlockClass = 'mt-3 min-w-0 sm:mt-4';
+
 export function ProjectsSection() {
-  const { label, title, icon } = sectionMeta.projects;
+  const { label, title, subtitle, icon } = sectionMeta.projects;
 
   return (
     <Section
       id="projects"
       label={label}
       title={title}
-      subtitle="Each project shows the technical system, stack, and business reason a recruiter or engineering manager should care."
+      subtitle={subtitle}
       icon={icon}
       variant="band"
     >
@@ -32,11 +34,22 @@ export function ProjectsSection() {
             <p className="mt-3 break-words rounded-lg border border-cyan-500/20 bg-cyan-500/5 px-3 py-2 font-mono text-[0.7rem] font-semibold leading-relaxed text-cyan-300 sm:mt-4 sm:text-xs">
               {project.highlight}
             </p>
-            <div className="mt-3 min-w-0 sm:mt-4">
+            <div className={detailBlockClass}>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-portfolio-muted">Architecture</p>
+              <ArchitectureFlow nodes={project.architecture} />
+            </div>
+            <div className={detailBlockClass}>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-portfolio-muted">Scale</p>
+              <p className="break-words text-sm leading-6 text-portfolio-muted">{project.scale}</p>
+            </div>
+            <div className={detailBlockClass}>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-portfolio-muted">Reliability</p>
+              <p className="break-words text-sm leading-6 text-portfolio-muted">{project.reliability}</p>
+            </div>
+            <div className={detailBlockClass}>
               <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-portfolio-muted">Business impact</p>
               <p className="break-words text-sm leading-6 text-portfolio-muted">{project.businessImpact}</p>
             </div>
-            <ArchitectureFlow nodes={project.architecture} />
             <div className="mt-3 flex min-w-0 flex-wrap gap-2 sm:mt-4">
               {project.stack.map((item) => (
                 <TechBadge key={item}>{item}</TechBadge>

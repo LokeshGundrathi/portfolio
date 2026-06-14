@@ -4,8 +4,11 @@ import { Header } from './components/layout/Header';
 import { ArchitectureSection } from './components/sections/ArchitectureSection';
 import { CertificationsSection } from './components/sections/CertificationsSection';
 import { ContactSection } from './components/sections/ContactSection';
+import { EngineeringHighlightsSection } from './components/sections/EngineeringHighlightsSection';
 import { ExperienceSection } from './components/sections/ExperienceSection';
+import { GitHubRepositoriesSection } from './components/sections/GitHubRepositoriesSection';
 import { HeroSection } from './components/sections/HeroSection';
+import { ProductionOwnershipSection } from './components/sections/ProductionOwnershipSection';
 import { ProjectsSection } from './components/sections/ProjectsSection';
 import { TechStackSection } from './components/sections/TechStackSection';
 
@@ -23,9 +26,12 @@ function App() {
       <Header onNavigate={scrollToSection} />
       <main className="min-w-0 overflow-x-hidden">
         <HeroSection />
+        <EngineeringHighlightsSection />
+        <ProductionOwnershipSection />
         <ExperienceSection />
         <ProjectsSection />
         <ArchitectureSection />
+        <GitHubRepositoriesSection />
         <TechStackSection />
         <Suspense fallback={null}>
           <ResumeSection />

@@ -4,14 +4,14 @@ import { Card } from '../ui/Card';
 import { Section } from '../ui/Section';
 
 export function ArchitectureSection() {
-  const { label, title, icon } = sectionMeta.architecture;
+  const { label, title, subtitle, icon } = sectionMeta.architecture;
 
   return (
     <Section
       id="architecture"
       label={label}
       title={title}
-      subtitle="These compact diagrams make private production work explainable without exposing confidential source code."
+      subtitle={subtitle}
       icon={icon}
     >
       <div className="grid min-w-0 grid-cols-1 items-stretch gap-4 md:grid-cols-2 md:gap-5">

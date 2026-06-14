@@ -10,7 +10,7 @@ const actionButtonClass =
   'inline-flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition sm:w-auto';
 
 export function ResumeSection() {
-  const { label, title, icon } = sectionMeta.resume;
+  const { label, title, subtitle, icon } = sectionMeta.resume;
   const [showPreview, setShowPreview] = useState(false);
 
   return (
@@ -18,7 +18,7 @@ export function ResumeSection() {
       id="resume"
       label={label}
       title={title}
-      subtitle="Recruiters can inspect the resume without leaving the page, then download it in one click."
+      subtitle={subtitle}
       icon={icon}
     >
       <Card className="overflow-hidden">

@@ -4,14 +4,14 @@ import { Card } from '../ui/Card';
 import { Section } from '../ui/Section';
 
 export function CertificationsSection() {
-  const { label, title, icon } = sectionMeta.certifications;
+  const { label, title, subtitle, icon } = sectionMeta.certifications;
 
   return (
     <Section
       id="certifications"
       label={label}
       title={title}
-      subtitle="A tight credential section supports the profile without competing with production work."
+      subtitle={subtitle}
       icon={icon}
       variant="band"
     >
